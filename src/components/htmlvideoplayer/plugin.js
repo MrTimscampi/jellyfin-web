@@ -1057,6 +1057,7 @@ define(['browser', 'require', 'events', 'apphost', 'loading', 'dom', 'playbackMa
                 }),
                 workerUrl: appRouter.baseUrl() + "/libraries/subtitles-octopus-worker.js",
                 legacyWorkerUrl: appRouter.baseUrl() + "/libraries/subtitles-octopus-worker-legacy.js",
+                lossyRender: true,
                 onError: function() {
                     htmlMediaHelper.onErrorInternal(self, 'mediadecodeerror');
                 }
