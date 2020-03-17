@@ -1,6 +1,8 @@
+@import "variables";
+
 * {
     scrollbar-width: thin;
-    scrollbar-color: #3b3b3b #202020;
+    scrollbar-color: #3b3b3b $headerbar;
 }
 
 .skinHeader,
@@ -21,7 +23,7 @@ html {
 }
 
 .skinHeader-withBackground {
-    background-color: #202020;
+    background-color: $headerbar;
 }
 
 .skinHeader.semiTransparent {
@@ -45,12 +47,12 @@ html {
 }
 
 .paper-icon-button-light:hover:not(:disabled) {
-    color: #00a4dc;
+    color: $accent;
     background-color: rgba(0, 164, 220, 0.2);
 }
 
 .paper-icon-button-light.show-focus:focus {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .fab,
@@ -65,17 +67,17 @@ html {
 }
 
 .button-submit {
-    background: #00a4dc;
-    color: #fff;
+    background: $accent;
+    color: $text;
 }
 
 .button-submit:focus {
-    background: #0cb0e8;
-    color: #fff;
+    background: $accent-focus;
+    color: $text;
 }
 
 .button-delete {
-    background: rgb(247, 0, 0);
+    background: $danger;
     color: rgba(255, 255, 255, 0.87);
 }
 
@@ -95,7 +97,7 @@ html {
 .inputLabelFocused,
 .selectLabelFocused,
 .textareaLabelFocused {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .checkboxOutline {
@@ -157,27 +159,27 @@ html {
 
 .toast {
     background: #303030;
-    color: #fff;
+    color: $text;
     color: rgba(255, 255, 255, 0.87);
 }
 
 .appfooter {
-    background: #202020;
+    background: $headerbar;
     color: #ccc;
     color: rgba(255, 255, 255, 0.78);
 }
 
 .itemSelectionPanel {
-    border: 1px solid #00a4dc;
+    border: 1px solid $accent;
 }
 
 .selectionCommandsPanel {
-    background: #00a4dc;
-    color: #fff;
+    background: $accent;
+    color: $text;
 }
 
 .upNextDialog-countdownText {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .alphaPickerButton {
@@ -187,12 +189,12 @@ html {
 }
 
 .alphaPickerButton-selected {
-    color: #fff;
+    color: $text;
 }
 
 .alphaPickerButton-tv:focus {
-    background-color: #00a4dc;
-    color: #fff !important;
+    background-color: $accent;
+    color: $text !important;
 }
 
 .detailTableBodyRow-shaded:nth-child(even) {
@@ -205,7 +207,7 @@ html {
 }
 
 .noBackdrop .detailSticky {
-    background: #202020;
+    background: $headerbar;
 }
 
 .listItem-border {
@@ -217,15 +219,15 @@ html {
 }
 
 .progressring-spiner {
-    border-color: #00a4dc;
+    border-color: $accent;
 }
 
 .button-flat:hover {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .button-link {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .mediaInfoText {
@@ -249,7 +251,7 @@ html {
 
 .emby-input:focus,
 .emby-textarea:focus {
-    border-color: #00a4dc;
+    border-color: $accent;
 }
 
 .emby-select-withcolor {
@@ -264,29 +266,29 @@ html {
 }
 
 .emby-select-withcolor:focus {
-    border-color: #00a4dc !important;
+    border-color: $accent !important;
 }
 
 .emby-select-tv-withcolor:focus {
-    background-color: #00a4dc !important;
-    color: #fff !important;
+    background-color: $accent !important;
+    color: $text !important;
 }
 
 .emby-checkbox:checked + span + .checkboxOutline {
-    border-color: #00a4dc;
+    border-color: $accent;
 }
 
 .emby-checkbox:focus + span + .checkboxOutline {
-    border-color: #fff;
+    border-color: $text;
 }
 
 .emby-checkbox:checked + span + .checkboxOutline,
 .itemProgressBarForeground {
-    background-color: #00a4dc;
+    background-color: $accent;
 }
 
 .emby-checkbox:focus:not(:checked) + span + .checkboxOutline {
-    border-color: #00a4dc;
+    border-color: $accent;
 }
 
 .itemProgressBarForeground-recording {
@@ -296,11 +298,11 @@ html {
 .countIndicator,
 .fullSyncIndicator,
 .playedIndicator {
-    background: #00a4dc;
+    background: $accent;
 }
 
 .fullSyncIndicator {
-    color: #fff;
+    color: $text;
 }
 
 .mainDrawer {
@@ -312,13 +314,13 @@ html {
 }
 
 .navMenuOption-selected {
-    background: #00a4dc !important;
-    color: #fff;
+    background: $accent !important;
+    color: $text;
 }
 
 .emby-button.show-focus:focus {
-    background: #00a4dc;
-    color: #fff;
+    background: $accent;
+    color: $text;
 }
 
 .emby-tab-button {
@@ -326,15 +328,15 @@ html {
 }
 
 .emby-tab-button-active {
-    color: #fff;
+    color: $text;
 }
 
 .emby-tab-button.show-focus:focus {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .emby-tab-button:hover {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .channelPrograms,
@@ -365,8 +367,8 @@ html {
 
 .guide-channelHeaderCell:focus,
 .programCell:focus {
-    background-color: #00a4dc !important;
-    color: #fff !important;
+    background-color: $accent !important;
+    color: $text !important;
 }
 
 .guide-programTextIcon {
@@ -385,12 +387,12 @@ html {
 
 .guide-date-tab-button.emby-tab-button-active,
 .guide-date-tab-button:focus {
-    color: #00a4dc;
+    color: $accent;
 }
 
 .guide-date-tab-button.show-focus:focus {
-    background-color: #00a4dc;
-    color: #fff;
+    background-color: $accent;
+    color: $text;
 }
 
 .infoBanner {
@@ -420,7 +422,7 @@ html {
 
 .card:focus .cardBox.visualCardBox,
 .card:focus .cardBox:not(.visualCardBox) .cardScalable {
-    border-color: #00a4dc !important;
+    border-color: $accent !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -448,5 +450,5 @@ html {
 }
 
 .metadataSidebarIcon {
-    color: #00a4dc;
+    color: $accent;
 }
