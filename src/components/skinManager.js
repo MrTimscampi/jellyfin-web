@@ -92,7 +92,7 @@ define(['apphost', 'userSettings', 'browser', 'events', 'backdrop', 'globalize',
         try {
             var color = getComputedStyle(document.querySelector('.skinHeader')).getPropertyValue('background-color');
             if (color) {
-                appHost.setThemeColor(color);
+                appHost.default.setThemeColor(color);
             }
         } catch (err) {
             console.error('error setting theme color: ' + err);

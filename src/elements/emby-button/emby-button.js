@@ -8,7 +8,7 @@ define(['browser', 'dom', 'layoutManager', 'shell', 'appRouter', 'apphost', 'css
         var href = this.getAttribute('href') || '';
         if (href !== '#') {
             if (this.getAttribute('target')) {
-                if (!appHost.supports('targetblank')) {
+                if (!appHost.default.supports('targetblank')) {
                     e.preventDefault();
                     shell.openUrl(href);
                 }
@@ -40,7 +40,7 @@ define(['browser', 'dom', 'layoutManager', 'shell', 'appRouter', 'apphost', 'css
             dom.addEventListener(this, 'click', onAnchorClick, {});
 
             if (this.getAttribute('data-autohide') === 'true') {
-                if (appHost.supports('externallinks')) {
+                if (appHost.default.supports('externallinks')) {
                     this.classList.remove('hide');
                 } else {
                     this.classList.add('hide');

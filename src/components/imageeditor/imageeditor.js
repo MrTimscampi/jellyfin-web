@@ -379,7 +379,7 @@ define(['dialogHelper', 'connectionManager', 'loading', 'dom', 'layoutManager', 
     function initEditor(context, options) {
 
         var uploadButtons = context.querySelectorAll('.btnOpenUploadMenu');
-        var isFileInputSupported = appHost.supports('fileinput');
+        var isFileInputSupported = appHost.default.supports('fileinput');
         for (var i = 0, length = uploadButtons.length; i < length; i++) {
             if (isFileInputSupported) {
                 uploadButtons[i].classList.remove('hide');

@@ -64,8 +64,8 @@ define(['layoutManager', 'datetime', 'cardBuilder', 'apphost'], function (layout
 
         for (i = 0, length = groups.length; i < length; i++) {
             var group = groups[i];
-            var supportsImageAnalysis = appHost.supports('imageanalysis');
-            var cardLayout = appHost.preferVisualCards || supportsImageAnalysis;
+            var supportsImageAnalysis = appHost.default.supports('imageanalysis');
+            var cardLayout = appHost.default.preferVisualCards || supportsImageAnalysis;
 
             cardLayout = true;
             if (group.name) {

@@ -210,7 +210,7 @@ define(['browser', 'appStorage', 'apphost', 'loading', 'connectionManager', 'glo
                 });
             }
 
-            if (user.Policy.EnableContentDownloading && appHost.supports('filedownload')) {
+            if (user.Policy.EnableContentDownloading && appHost.default.supports('filedownload')) {
                 menuItems.push({
                     name: globalize.translate('ButtonDownload'),
                     id: 'download',

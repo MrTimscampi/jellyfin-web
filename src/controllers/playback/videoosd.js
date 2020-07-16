@@ -880,7 +880,7 @@ define(['playbackManager', 'dom', 'inputManager', 'datetime', 'itemHelper', 'med
                 showVolumeSlider = false;
             }
 
-            if (player.isLocalPlayer && appHost.supports('physicalvolumecontrol')) {
+            if (player.isLocalPlayer && appHost.default.supports('physicalvolumecontrol')) {
                 showMuteButton = false;
                 showVolumeSlider = false;
             }

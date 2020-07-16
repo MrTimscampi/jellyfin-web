@@ -202,7 +202,7 @@ define(['require', 'datetime', 'itemHelper', 'events', 'browser', 'imageLoader',
 
         toggleRepeatButtonIcon = toggleRepeatButton.querySelector('.material-icons');
 
-        volumeSliderContainer.classList.toggle('hide', appHost.supports('physicalvolumecontrol'));
+        volumeSliderContainer.classList.toggle('hide', appHost.default.supports('physicalvolumecontrol'));
 
         function setVolume() {
             if (currentPlayer) {
@@ -420,7 +420,7 @@ define(['require', 'datetime', 'itemHelper', 'events', 'browser', 'imageLoader',
             showVolumeSlider = false;
         }
 
-        if (currentPlayer.isLocalPlayer && appHost.supports('physicalvolumecontrol')) {
+        if (currentPlayer.isLocalPlayer && appHost.default.supports('physicalvolumecontrol')) {
             showMuteButton = false;
             showVolumeSlider = false;
         }
@@ -516,20 +516,20 @@ define(['require', 'datetime', 'itemHelper', 'events', 'browser', 'imageLoader',
         var textLines = nowPlayingItem ? nowPlayingHelper.getNowPlayingNames(nowPlayingItem) : [];
         nowPlayingTextElement.innerHTML = '';
         if (textLines) {
-            let itemText = document.createElement('div');
-            let secondaryText = document.createElement('div');
+            const itemText = document.createElement('div');
+            const secondaryText = document.createElement('div');
             secondaryText.classList.add('nowPlayingBarSecondaryText');
             if (textLines.length > 1) {
                 textLines[1].secondary = true;
                 if (textLines[1].text) {
-                    let text = document.createElement('a');
+                    const text = document.createElement('a');
                     text.innerHTML = textLines[1].text;
                     secondaryText.appendChild(text);
                 }
             }
 
             if (textLines[0].text) {
-                let text = document.createElement('a');
+                const text = document.createElement('a');
                 text.innerHTML = textLines[0].text;
                 itemText.appendChild(text);
             }
@@ -572,10 +572,10 @@ define(['require', 'datetime', 'itemHelper', 'events', 'browser', 'imageLoader',
                     if (!layoutManager.mobile) {
                         let contextButton = nowPlayingBarElement.querySelector('.btnToggleContextMenu');
                         // We remove the previous event listener by replacing the item in each update event
-                        let contextButtonClone = contextButton.cloneNode(true);
+                        const contextButtonClone = contextButton.cloneNode(true);
                         contextButton.parentNode.replaceChild(contextButtonClone, contextButton);
                         contextButton = nowPlayingBarElement.querySelector('.btnToggleContextMenu');
-                        let options = {
+                        const options = {
                             play: false,
                             queue: false,
                             clearQueue: true,
@@ -617,10 +617,10 @@ define(['require', 'datetime', 'itemHelper', 'events', 'browser', 'imageLoader',
             return;
         }
 
-        let shuffleMode = playbackManager.getQueueShuffleMode();
-        let context = nowPlayingBarElement;
+        const shuffleMode = playbackManager.getQueueShuffleMode();
+        const context = nowPlayingBarElement;
         const cssClass = 'buttonActive';
-        let toggleShuffleButton = context.querySelector('.btnShuffleQueue');
+        const toggleShuffleButton = context.querySelector('.btnShuffleQueue');
         switch (shuffleMode) {
             case 'Shuffle':
                 toggleShuffleButton.classList.add(cssClass);

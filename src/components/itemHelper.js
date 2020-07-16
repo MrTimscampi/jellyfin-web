@@ -231,7 +231,7 @@ define(['apphost', 'globalize'], function (appHost, globalize) {
             if (isLocalItem(item)) {
                 return false;
             }
-            return user.Policy.EnablePublicSharing && appHost.supports('sharing');
+            return user.Policy.EnablePublicSharing && appHost.default.supports('sharing');
         },
 
         enableDateAddedDisplay: function (item) {

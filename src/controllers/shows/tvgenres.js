@@ -75,7 +75,7 @@ define(['layoutManager', 'loading', 'libraryBrowser', 'cardBuilder', 'lazyLoader
                 ParentId: params.topParentId
             };
             ApiClient.getItems(ApiClient.getCurrentUserId(), query).then(function (result) {
-                var supportsImageAnalysis = appHost.supports('imageanalysis');
+                var supportsImageAnalysis = appHost.default.supports('imageanalysis');
 
                 if (viewStyle == 'Thumb') {
                     cardBuilder.buildCards(result.Items, {

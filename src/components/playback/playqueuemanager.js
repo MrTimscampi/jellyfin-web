@@ -77,7 +77,7 @@ define([], function () {
 
     PlayQueueManager.prototype.sortShuffledPlaylist = function () {
         this._playlist = [];
-        for (let item of this._sortedPlaylist) {
+        for (const item of this._sortedPlaylist) {
             this._playlist.push(item);
         }
         this._sortedPlaylist = [];

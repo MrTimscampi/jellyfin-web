@@ -85,7 +85,7 @@ define(['require', 'browser', 'layoutManager', 'appSettings', 'pluginManager', '
             selectSkin.value = options[0].value;
         }
 
-        if (options.length > 1 && appHost.supports('skins')) {
+        if (options.length > 1 && appHost.default.supports('skins')) {
             context.querySelector('.selectSkinContainer').classList.remove('hide');
         } else {
             context.querySelector('.selectSkinContainer').classList.add('hide');
@@ -113,37 +113,37 @@ define(['require', 'browser', 'layoutManager', 'appSettings', 'pluginManager', '
             context.querySelector('.selectDashboardThemeContainer').classList.add('hide');
         }
 
-        if (appHost.supports('displaylanguage')) {
+        if (appHost.default.supports('displaylanguage')) {
             context.querySelector('.languageSection').classList.remove('hide');
         } else {
             context.querySelector('.languageSection').classList.add('hide');
         }
 
-        if (appHost.supports('displaymode')) {
+        if (appHost.default.supports('displaymode')) {
             context.querySelector('.fldDisplayMode').classList.remove('hide');
         } else {
             context.querySelector('.fldDisplayMode').classList.add('hide');
         }
 
-        if (appHost.supports('externallinks')) {
+        if (appHost.default.supports('externallinks')) {
             context.querySelector('.learnHowToContributeContainer').classList.remove('hide');
         } else {
             context.querySelector('.learnHowToContributeContainer').classList.add('hide');
         }
 
-        if (appHost.supports('runatstartup')) {
+        if (appHost.default.supports('runatstartup')) {
             context.querySelector('.fldAutorun').classList.remove('hide');
         } else {
             context.querySelector('.fldAutorun').classList.add('hide');
         }
 
-        if (appHost.supports('soundeffects')) {
+        if (appHost.default.supports('soundeffects')) {
             context.querySelector('.fldSoundEffects').classList.remove('hide');
         } else {
             context.querySelector('.fldSoundEffects').classList.add('hide');
         }
 
-        if (appHost.supports('screensaver')) {
+        if (appHost.default.supports('screensaver')) {
             context.querySelector('.selectScreensaverContainer').classList.remove('hide');
         } else {
             context.querySelector('.selectScreensaverContainer').classList.add('hide');
@@ -206,7 +206,7 @@ define(['require', 'browser', 'layoutManager', 'appSettings', 'pluginManager', '
 
         user.Configuration.DisplayMissingEpisodes = context.querySelector('.chkDisplayMissingEpisodes').checked;
 
-        if (appHost.supports('displaylanguage')) {
+        if (appHost.default.supports('displaylanguage')) {
             userSettingsInstance.language(context.querySelector('#selectLanguage').value);
         }
 

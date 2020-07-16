@@ -1,4 +1,4 @@
-define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'playQueueManager', 'userSettings', 'globalize', 'connectionManager', 'loading', 'apphost', 'screenfull'], function (events, datetime, appSettings, itemHelper, pluginManager, PlayQueueManager, userSettings, globalize, connectionManager, loading, apphost, screenfull) {
+define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'playQueueManager', 'userSettings', 'globalize', 'connectionManager', 'loading', 'apphost', 'screenfull'], function (events, datetime, appSettings, itemHelper, pluginManager, PlayQueueManager, userSettings, globalize, connectionManager, loading, appHost, screenfull) {
     'use strict';
 
     /** Delay time in ms for reportPlayback logging */
@@ -351,7 +351,7 @@ define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'pla
             PlaySessionId: startingPlaySession,
             StartTimeTicks: startPosition || 0,
             EnableRedirection: true,
-            EnableRemoteMedia: apphost.supports('remoteaudio')
+            EnableRemoteMedia: appHost.default.supports('remoteaudio')
         });
     }
 
@@ -658,7 +658,7 @@ define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'pla
 
         if (mediaSource.SupportsDirectPlay || isFolderRip) {
 
-            if (mediaSource.IsRemote && !apphost.supports('remotevideo')) {
+            if (mediaSource.IsRemote && !appHost.default.supports('remotevideo')) {
                 return Promise.resolve(false);
             }
 
@@ -3469,7 +3469,7 @@ define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'pla
             return streamInfo ? streamInfo.playbackStartTimeTicks : null;
         };
 
-        if (apphost.supports('remotecontrol')) {
+        if (appHost.default.supports('remotecontrol')) {
 
             require(['serverNotifications'], function (serverNotifications) {
                 events.on(serverNotifications, 'ServerShuttingDown', self.setDefaultPlayerActive.bind(self));
@@ -3891,7 +3891,7 @@ define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'pla
                 'PlayTrailers'
             ];
 
-            if (apphost.supports('fullscreenchange')) {
+            if (appHost.default.supports('fullscreenchange')) {
                 list.push('ToggleFullscreen');
             }
 

@@ -187,7 +187,7 @@ define(['apphost', 'appSettings', 'dom', 'connectionManager', 'loading', 'layout
         view.addEventListener('viewshow', function (e) {
             loading.show();
 
-            if (!appHost.supports('multiserver')) {
+            if (!appHost.default.supports('multiserver')) {
                 view.querySelector('.btnSelectServer').classList.add('hide');
             }
 

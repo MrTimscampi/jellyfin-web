@@ -23,7 +23,7 @@ define(['controllers/dashboard/users/userpasswordpage', 'loading', 'libraryMenu'
                 if (user.PrimaryImageTag) {
                     page.querySelector('#btnAddImage').classList.add('hide');
                     page.querySelector('#btnDeleteImage').classList.remove('hide');
-                } else if (appHost.supports('fileinput') && (loggedInUser.Policy.IsAdministrator || user.Policy.EnableUserPreferenceAccess)) {
+                } else if (appHost.default.supports('fileinput') && (loggedInUser.Policy.IsAdministrator || user.Policy.EnableUserPreferenceAccess)) {
                     page.querySelector('#btnDeleteImage').classList.add('hide');
                     page.querySelector('#btnAddImage').classList.remove('hide');
                 }

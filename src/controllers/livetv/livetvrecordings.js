@@ -24,7 +24,7 @@ define(['layoutManager', 'loading', 'cardBuilder', 'apphost', 'imageLoader', 'sc
             recordingItems.classList.add('vertical-wrap');
         }
 
-        appHost.supports('imageanalysis');
+        appHost.default.supports('imageanalysis');
         recordingItems.innerHTML = cardBuilder.getCardsHtml(Object.assign({
             items: recordings,
             shape: scrollX ? 'autooverflow' : 'auto',

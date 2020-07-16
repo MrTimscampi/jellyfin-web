@@ -30,8 +30,8 @@ define(['layoutManager', 'cardBuilder', 'apphost', 'imageLoader', 'loading', 'sc
             recordingItems.classList.add('vertical-wrap');
         }
 
-        var supportsImageAnalysis = appHost.supports('imageanalysis');
-        var cardLayout = appHost.preferVisualCards || supportsImageAnalysis;
+        var supportsImageAnalysis = appHost.default.supports('imageanalysis');
+        var cardLayout = appHost.default.preferVisualCards || supportsImageAnalysis;
         cardLayout = false;
         recordingItems.innerHTML = cardBuilder.getCardsHtml(Object.assign({
             items: recordings,

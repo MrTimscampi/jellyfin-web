@@ -31,7 +31,7 @@ define(['apphost', 'connectionManager', 'layoutManager', 'listViewStyle', 'emby-
                 page.querySelector('.clientSettings').classList.add('hide');
             }
 
-            if (appHost.supports('multiserver')) {
+            if (appHost.default.supports('multiserver')) {
                 page.querySelector('.selectServer').classList.remove('hide');
             } else {
                 page.querySelector('.selectServer').classList.add('hide');

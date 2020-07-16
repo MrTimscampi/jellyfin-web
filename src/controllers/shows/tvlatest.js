@@ -19,7 +19,7 @@ define(['loading', 'components/groupedcards', 'cardBuilder', 'apphost', 'imageLo
     function loadLatest(context, params, promise) {
         promise.then(function (items) {
             var html = '';
-            appHost.supports('imageanalysis');
+            appHost.default.supports('imageanalysis');
             html += cardBuilder.getCardsHtml({
                 items: items,
                 shape: 'backdrop',

@@ -170,8 +170,8 @@ define(['appRouter', 'cardBuilder', 'dom', 'globalize', 'connectionManager', 'ap
 
     function getItemsHtmlFn(section) {
         return function (items) {
-            var supportsImageAnalysis = appHost.supports('imageanalysis');
-            var cardLayout = (appHost.preferVisualCards || supportsImageAnalysis) && section.autoCardLayout && section.showTitle;
+            var supportsImageAnalysis = appHost.default.supports('imageanalysis');
+            var cardLayout = (appHost.default.preferVisualCards || supportsImageAnalysis) && section.autoCardLayout && section.showTitle;
             cardLayout = false;
             var serverId = this.apiClient.serverId();
             var leadingButtons = layoutManager.tv ? [{

@@ -96,7 +96,7 @@ define(['require', 'browser', 'appSettings', 'apphost', 'focusManager', 'quality
             context.querySelector('.videoQualitySection').classList.add('hide');
         }
 
-        if (appHost.supports('multiserver')) {
+        if (appHost.default.supports('multiserver')) {
 
             context.querySelector('.fldVideoInNetworkQuality').classList.remove('hide');
             context.querySelector('.fldVideoInternetQuality').classList.remove('hide');
@@ -168,7 +168,7 @@ define(['require', 'browser', 'appSettings', 'apphost', 'focusManager', 'quality
             }
         });
 
-        if (appHost.supports('externalplayerintent') && userId === loggedInUserId) {
+        if (appHost.default.supports('externalplayerintent') && userId === loggedInUserId) {
             context.querySelector('.fldExternalPlayer').classList.remove('hide');
         } else {
             context.querySelector('.fldExternalPlayer').classList.add('hide');
@@ -177,7 +177,7 @@ define(['require', 'browser', 'appSettings', 'apphost', 'focusManager', 'quality
         if (userId === loggedInUserId && (user.Policy.EnableVideoPlaybackTranscoding || user.Policy.EnableAudioPlaybackTranscoding)) {
             context.querySelector('.qualitySections').classList.remove('hide');
 
-            if (appHost.supports('chromecast') && user.Policy.EnableVideoPlaybackTranscoding) {
+            if (appHost.default.supports('chromecast') && user.Policy.EnableVideoPlaybackTranscoding) {
                 context.querySelector('.fldChromecastQuality').classList.remove('hide');
             } else {
                 context.querySelector('.fldChromecastQuality').classList.add('hide');

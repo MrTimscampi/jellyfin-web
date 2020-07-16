@@ -10,14 +10,14 @@ import 'listViewStyle';
 
 function getOffsets(elems) {
 
-    let results = [];
+    const results = [];
 
     if (!document) {
         return results;
     }
 
     for (const elem of elems) {
-        let box = elem.getBoundingClientRect();
+        const box = elem.getBoundingClientRect();
 
         results.push({
             top: box.top,
@@ -36,7 +36,7 @@ function getPosition(options, dlg) {
     const windowHeight = windowSize.innerHeight;
     const windowWidth = windowSize.innerWidth;
 
-    let pos = getOffsets([options.positionTo])[0];
+    const pos = getOffsets([options.positionTo])[0];
 
     if (options.positionY !== 'top') {
         pos.top += (pos.height || 0) / 2;
@@ -85,7 +85,7 @@ export function show(options) {
     // positionTo
     // showCancel
     // title
-    let dialogOptions = {
+    const dialogOptions = {
         removeOnClose: true,
         enableHistory: options.enableHistory,
         scrollY: false
@@ -107,7 +107,7 @@ export function show(options) {
         dialogOptions.autoFocus = false;
     }
 
-    let dlg = dialogHelper.createDialog(dialogOptions);
+    const dlg = dialogHelper.createDialog(dialogOptions);
 
     if (isFullscreen) {
         dlg.classList.add('actionsheet-fullscreen');
@@ -133,7 +133,7 @@ export function show(options) {
     }
 
     let renderIcon = false;
-    let icons = [];
+    const icons = [];
     let itemIcon;
     for (const item of options.items) {
 
@@ -248,7 +248,7 @@ export function show(options) {
         centerFocus(dlg.querySelector('.actionSheetScroller'), false, true);
     }
 
-    let btnCloseActionSheet = dlg.querySelector('.btnCloseActionSheet');
+    const btnCloseActionSheet = dlg.querySelector('.btnCloseActionSheet');
     if (btnCloseActionSheet) {
         btnCloseActionSheet.addEventListener('click', function () {
             dialogHelper.close(dlg);

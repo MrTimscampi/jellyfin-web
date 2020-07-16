@@ -98,7 +98,7 @@ define(['layoutManager', 'loading', 'datetime', 'libraryBrowser', 'cardBuilder',
                 html += '<div is="emby-itemscontainer" class="itemsContainer vertical-wrap padded-left padded-right">';
             }
 
-            var supportsImageAnalysis = appHost.supports('imageanalysis');
+            var supportsImageAnalysis = appHost.default.supports('imageanalysis');
             supportsImageAnalysis = false;
             html += cardBuilder.getCardsHtml({
                 items: group.items,

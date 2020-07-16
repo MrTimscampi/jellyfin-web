@@ -107,7 +107,7 @@ define(['browser', 'require', 'events', 'apphost', 'loading', 'dom', 'playbackMa
     }
 
     function hidePrePlaybackPage() {
-        let animatedPage = document.querySelector('.page:not(.hide)');
+        const animatedPage = document.querySelector('.page:not(.hide)');
         animatedPage.classList.add('hide');
         // At this point, we must hide the scrollbar placeholder, so it's not being displayed while the item is being loaded
         document.body.classList.remove('force-scroll');
@@ -1325,7 +1325,7 @@ define(['browser', 'require', 'events', 'apphost', 'loading', 'dom', 'playbackMa
                         }
 
                         // Can't autoplay in these browsers so we need to use the full controls, at least until playback starts
-                        if (!appHost.supports('htmlvideoautoplay')) {
+                        if (!appHost.default.supports('htmlvideoautoplay')) {
                             html += '<video class="' + cssClass + '" preload="metadata" autoplay="autoplay" controls="controls" webkit-playsinline playsinline>';
                         } else {
                             // Chrome 35 won't play with preload none
@@ -1385,8 +1385,8 @@ define(['browser', 'require', 'events', 'apphost', 'loading', 'dom', 'playbackMa
     };
 
     HtmlVideoPlayer.prototype.supportsPlayMethod = function (playMethod, item) {
-        if (appHost.supportsPlayMethod) {
-            return appHost.supportsPlayMethod(playMethod, item);
+        if (appHost.default.supportsPlayMethod) {
+            return appHost.default.supportsPlayMethod(playMethod, item);
         }
 
         return true;
@@ -1401,8 +1401,8 @@ define(['browser', 'require', 'events', 'apphost', 'loading', 'dom', 'playbackMa
     };
 
     function getDeviceProfileInternal(item, options) {
-        if (appHost.getDeviceProfile) {
-            return appHost.getDeviceProfile(item, options);
+        if (appHost.default.getDeviceProfile) {
+            return appHost.default.getDeviceProfile(item, options);
         }
 
         return getDefaultProfile();

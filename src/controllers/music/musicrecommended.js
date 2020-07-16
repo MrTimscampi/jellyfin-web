@@ -41,7 +41,7 @@ define(['browser', 'layoutManager', 'userSettings', 'inputManager', 'loading', '
         };
         ApiClient.getJSON(ApiClient.getUrl('Users/' + userId + '/Items/Latest', options)).then(function (items) {
             var elem = page.querySelector('#recentlyAddedSongs');
-            var supportsImageAnalysis = appHost.supports('imageanalysis');
+            var supportsImageAnalysis = appHost.default.supports('imageanalysis');
             supportsImageAnalysis = false;
             elem.innerHTML = cardBuilder.getCardsHtml({
                 items: items,
@@ -90,7 +90,7 @@ define(['browser', 'layoutManager', 'userSettings', 'inputManager', 'loading', '
             }
 
             var itemsContainer = elem.querySelector('.itemsContainer');
-            var supportsImageAnalysis = appHost.supports('imageanalysis');
+            var supportsImageAnalysis = appHost.default.supports('imageanalysis');
             supportsImageAnalysis = false;
             itemsContainer.innerHTML = cardBuilder.getCardsHtml({
                 items: result.Items,
@@ -134,7 +134,7 @@ define(['browser', 'layoutManager', 'userSettings', 'inputManager', 'loading', '
             }
 
             var itemsContainer = elem.querySelector('.itemsContainer');
-            var supportsImageAnalysis = appHost.supports('imageanalysis');
+            var supportsImageAnalysis = appHost.default.supports('imageanalysis');
             supportsImageAnalysis = false;
             itemsContainer.innerHTML = cardBuilder.getCardsHtml({
                 items: result.Items,

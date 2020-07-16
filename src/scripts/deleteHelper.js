@@ -18,7 +18,7 @@ export function deleteItem(options) {
     const item = options.item;
     const parentId = item.SeasonId || item.SeriesId || item.ParentId;
 
-    let apiClient = connectionManager.getApiClient(item.ServerId);
+    const apiClient = connectionManager.getApiClient(item.ServerId);
 
     return confirm({
 
@@ -40,7 +40,7 @@ export function deleteItem(options) {
             }
         }, function (err) {
 
-            let result = function () {
+            const result = function () {
                 return Promise.reject(err);
             };
 

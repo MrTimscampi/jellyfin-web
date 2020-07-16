@@ -3,7 +3,7 @@ define(['datetime', 'cardBuilder', 'imageLoader', 'apphost', 'loading', 'paper-i
 
     function renderTimers(context, timers) {
         var html = '';
-        appHost.supports('imageanalysis');
+        appHost.default.supports('imageanalysis');
         html += cardBuilder.getCardsHtml({
             items: timers,
             shape: 'auto',
