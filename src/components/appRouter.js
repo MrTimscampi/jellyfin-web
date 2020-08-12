@@ -57,7 +57,7 @@ define(['loading', 'globalize', 'events', 'viewManager', 'skinManager', 'backdro
                 appRouter.showWelcome();
                 break;
             case 'ServerUpdateNeeded':
-                require(['alert'], function (alert) {
+                import('alert').then(({default: alert}) =>{
                     alert.default({
                         text: globalize.translate('ServerUpdateNeeded', 'https://github.com/jellyfin/jellyfin'),
                         html: globalize.translate('ServerUpdateNeeded', '<a href="https://github.com/jellyfin/jellyfin">https://github.com/jellyfin/jellyfin</a>')
@@ -92,9 +92,13 @@ define(['loading', 'globalize', 'events', 'viewManager', 'skinManager', 'backdro
             url += '?' + ctx.querystring;
         }
 
-        require(['text!' + url], function (html) {
-            loadContent(ctx, route, html, request);
-        });
+        fetch(url)
+            .then((response) => {
+                return response.text();
+            })
+            .then((html) => {
+                loadContent(ctx, route, html, request);
+            });
     }
 
     function handleRoute(ctx, next, route) {
@@ -179,7 +183,7 @@ define(['loading', 'globalize', 'events', 'viewManager', 'skinManager', 'backdro
         forcedLogoutMsg = null;
 
         if (msg) {
-            require(['alert'], function (alert) {
+            import('alert').then(({default: alert}) => {
                 alert(msg);
             });
         }
