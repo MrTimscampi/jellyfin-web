@@ -846,10 +846,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/noto-sans-hk@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/noto-sans-hk/-/noto-sans-hk-4.2.0.tgz#2023451f57a7ac2ded594dbe980081110bbd5fd8"
-  integrity sha512-0RyolSFKDV4kwOtSndcYJEtuMwERW4PUdlZ/pCFQPqDPZ585xKdayAEqVHFEksbkkJCtseKRDhaiPIB1kH7acg==
+"@fontsource/noto-sans-hk@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/noto-sans-hk/-/noto-sans-hk-4.4.5.tgz#00dd0564de1c288d13bcba0c8633c7e2a098f395"
+  integrity sha512-O0F7op7vFv4qtTvJgCp+nPMwST5HJAm9gbVWoJT7+b+IKYSTHT01gDuBTpIKrn6/v7E/NLwkUPXkqE+tsx27Yw==
 
 "@fontsource/noto-sans-jp@^4.2.0":
   version "4.2.0"
